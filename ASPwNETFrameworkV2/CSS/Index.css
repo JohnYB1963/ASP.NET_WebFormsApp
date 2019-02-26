@@ -1,0 +1,44 @@
+﻿
+
+#Default h1{
+   display: inline-block;
+   border-style: groove
+}
+#Default label {
+    display: inline-block;
+    border: solid;
+    width: 100px;
+    height: 25px;
+}
+#customerInfo label {
+    display: inline-block;
+    border: solid;
+    width: 100px;
+    height: 25px;
+}
+
+#outputData p {
+
+    border: solid;
+    width: 100px;
+    height: 25px;
+}
+
+#Warning p, #Warning label{
+    color: red;
+    font: bold;
+}
+
+#MainContent_resultsTable  table {
+    table-layout: fixed;
+}
+#MainContent_resultsTable tr td {
+    
+
+}
+#MainContent_resultsTable tr td{
+    border: 1px solid black;
+    padding: 3px;
+}
+
+

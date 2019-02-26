@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MyFirstDatabase" Class="MFDDataClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=MyFirstDatabase;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MyFirstDatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Customers" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="CustomerPurchase" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IsAdmin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Purchases" Member="Purchases">
+    <Type Name="Purchase">
+      <Column Name="PurchaseID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateofPurchase" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PurchaseAmmount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PurchaseDesc" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.getCustomer" Method="getCustomer">
+    <Parameter Name="CustomerID" Parameter="customerID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="getCustomerResult">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="CustomerPurchase" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.getHKCustomers" Method="getHKCustomers">
+    <ElementType Name="getHKCustomersResult">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="CustomerPurchase" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
